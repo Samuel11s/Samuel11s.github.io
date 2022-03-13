@@ -1,0 +1,526 @@
+/* width */
+::-webkit-scrollbar 
+    {
+        width: 20px;
+    }
+  
+  /* Track */
+::-webkit-scrollbar-track 
+    {
+        box-shadow: inset 0 0 5px grey; 
+    }
+   
+  /* Handle */
+::-webkit-scrollbar-thumb 
+    {
+        background: rgba(0, 0, 0, 0.178); 
+        border-radius: 10px;
+    }
+  
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover 
+    {
+        background: rgba(169, 169, 169, 0.712); 
+    }
+  
+  /* The sticky class is added to the header with JS when it reaches its scroll position */
+.sticky 
+    {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+  
+  /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+    padding-top: 40px;
+  }
+/* Afficher les tabs sur toute la page */
+body, html 
+    {
+        height: 100%;
+        margin: 0;
+        font-family: Arial;
+    }
+
+    /* Style des liens des tabs */
+p, h1, h2, h3, h4, h5, h6, b, em, i, strong, br, sup {cursor: default;}
+.tablink 
+    {
+        background-color:rgba(0, 0, 0, 0.575);
+        color: darkgrey;
+        float: left;
+        border: 2px solid rgb(107, 105, 105);
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        font-size: 17px;
+        width: 20%;
+    }
+
+.tablink:hover
+    {
+        background-color: #777;        
+        box-shadow: grey 2px 3px 5px;
+    }
+
+.tablink:hover .colorB
+    {
+        display: inline;
+    }
+
+    /* Style du contenu des tabs (et on ajoute une hauteur de:100% pour toute la page) */
+.tabcontent 
+    {
+        color: black;
+        display: none;
+        padding: 100px 20px;
+        height: 100%;
+    }
+.colorB 
+    {
+        display: none;
+    }
+
+#Home {background-color: whitesmoke;}
+#News {background-color: whitesmoke;}
+#Contact {background-color: whitesmoke;}
+#About {background-color: whitesmoke;}
+
+    /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the ta.tablink (.icon) */
+@media all and (max-width: 500px) 
+    {
+        .tablink .name:not(:first-child) 
+        {
+            display: none;
+        }
+        .tablink .colorB
+        {
+            display: block;
+        }
+        .tablink:hover .name
+        {
+            display: block;
+            font-size: 10px;
+        }
+    }
+
+    /* The "responsive" class is added to the ta.tablink with JavaScript when the user clicks on the icon. This class makes the ta.tablink look good on small screens (display the links vertically instead of horizontally) */
+@media all and (max-width: 500px) 
+    {
+        .tablink.responsive 
+        {
+            position: relative;
+        }
+        .tablink.responsive .colorB 
+        {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }            
+        #defaultOpen .name
+        {
+            display: block;
+            font-size: 10px;
+            margin-top:-11px;
+
+        }  
+        .logo
+        {
+            display:none;
+        } 
+        .illust
+        {
+            display:none;
+        }
+        .logo1
+        {
+            background-color: rgba(255, 255, 255, 0.692);
+            color: black;
+            font-size: 50px; /* Responsive font size */
+            font-weight: bold;
+            margin: 0 auto; /* Centrer le text container */
+            padding: 0px;
+            width:100%;
+            text-align: center; /* Centrer du text */
+            position: absolute; /* Position du text */
+            top: 30%; /* Position text en haut */
+            left:50%; /* Position text à gauche */
+            transform: translate(-50%, -50%); /* Position text centré à max*/
+            mix-blend-mode: screen; /* Mettre le text en transp... */
+        }
+        .illustr
+        {
+            font-size: 10px;
+            border:5px solid black;
+            width:90%;
+            margin-left: 4%;
+        }
+        .head .right 
+        {
+            float: left;
+            margin-left:0;
+            padding: 6px;
+            border: none;
+            outline: none;
+            margin-top: 100px;
+            margin-right: 16px;
+            font-size: 17px;
+        }
+        body
+        {
+            overflow-x: hidden;
+            width:104%;
+        }
+    }
+@media all and (min-width:  1000px) {}
+@media all and (max-width:  995px) {}
+.head
+    {
+        width: 100%;
+        height: 150px;
+        background-image: url("img/head.gif");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position-y: 40%;
+        position: relative;
+    }
+.logo
+    {
+        background-color: rgba(255, 255, 255, 0.849);
+        color: black;
+        font-size: 50px; /* Responsive font size */
+        font-weight: bold;
+        margin: 0 auto; /* Centrer le text container */
+        padding: 0px;
+        width:40%;
+        text-align: center; /* Centrer du text */
+        position: absolute; /* Position du text */
+        top: 50%; /* Position text en haut */
+        left:21%; /* Position text à gauche */
+        transform: translate(-50%, -50%); /* Position text centré à max*/
+        mix-blend-mode: screen; /* Mettre le text en transp... */
+    }
+.espc
+    {
+        float: left;
+        outline: none;
+        border:none;
+        width: 20%;
+        height: 53px;
+        background-color:rgba(14, 14, 14, 0.582);
+    }
+.illust
+    {
+        font-size: 17px;
+        border:5px solid black;
+        width:90%;
+        margin-left: 4%;
+    }
+.right 
+    {
+        float: right;
+        padding: 6px;
+        border: none;
+        margin-top: 10px;
+        font-size: 18px;
+        color:lightgrey;
+        border-radius: 20px 0px 0px 20px;
+    }
+.right0 
+    {
+        float: right;
+        padding: 6px;
+        border: none;
+        margin-top: 10px;
+        margin-right: 5px;
+        font-size: 17px;
+        border-radius: 0px 20px 20px 0px;
+        cursor: pointer;
+    }
+.right0:hover
+    {
+        box-shadow: black 3px 6px 9px;
+        color:white;
+        background-color: black;
+    }
+.Menu 
+    {
+        display: inline-block;
+        width:100% ;
+        height: 50px;
+        background-color:rgba(14, 14, 14, 0.600);
+    }
+.Menu img 
+    {
+        clear:left;
+        width: 10%;
+        height:80%;
+        margin-left:5px;
+        margin-top:2px;
+    }
+.Menu input[type="text"]
+    {
+        width: 130px;
+        background-color: white;
+        color: black;
+        -webkit-transition: 0.6s ease-in-out;
+        transition: 0.6s ease-in-out;
+    }
+.Menu input[type=text]:focus 
+    {
+        width: 50%;
+        background-color: rgba(14, 14, 14, 0.24);
+        border:1px solid white;
+        color:white;
+    }
+.GoTop
+    {
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        background-color: rgba(0, 0, 0, 0.692);
+        border-radius:  50%;
+        border: 3px solid bisque;
+        color: rgba(245, 245, 245, 0.801);
+        font-size: 17px;
+        font-weight: bold;
+        text-decoration: none;
+        width: max-content;
+        padding-top: 10px;
+        height: 30px;
+        right:0;
+        bottom:0;
+        margin-bottom: 20px;
+        margin-right: 20px;
+        background-color: rgba(0, 128, 0, 0.548);
+        background: rgba(15, 1, 75, 0.808);
+        animation-name: animatetop;
+        animation-duration: 3s;
+        -webkit-transition: 0.6s ease-in-out;
+        transition: 0.6s ease-in-out;
+      }
+      
+      /* Add Animation */
+      @keyframes animatetop {
+        from {top: 10px;background-color: rgba(0, 128, 128, 0.664)}
+        to {top: 600px;}
+      }
+.search_result
+      {
+        background-color: whitesmoke;
+        color: black;
+        font-size: 22px;
+        position: relative;
+        font-weight: bold;
+        width: 95%;
+        padding-top:5px;
+        margin:10px;
+        margin-left:3%;
+        text-align:center;
+        overflow: hidden;
+        border-radius: 30px;
+        height:auto;
+      }
+.GoTop a
+    {
+        text-decoration: none;
+        color:black;
+    }
+.GoTop:hover
+    {
+        box-shadow:black 2px 5px 7px
+    }
+.close
+    {
+        color: red;
+        font-size:20px;
+        background-color: rgba(128, 128, 128, 0.473);
+        right:0;
+        top:0;
+        margin-top:5px;
+        margin-right:20px;
+        padding:10px 15px;
+        position: absolute;
+        width: 2%;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+.loader{
+        background: url('loading.gif') 50% 50% no-repeat rgba(255, 255, 255, 0.8);
+        cursor: wait;
+        height: 100%;
+        left: 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 9999;
+    }
+        .loader h1{
+            background: none;
+            border: none;
+            color: #458976;
+            font-size: 22px;
+            font-family: "Open Sans",sans-serif;
+            height: 700px;
+            line-height: 700px;
+            margin: 0 0 10px;
+            margin-top:20px;
+            padding: 0;
+            text-align: center;
+        }
+
+footer
+    {
+        bottom:0;
+        right:0;
+        width:auto;
+        margin:0;
+        padding:30px 30px;
+        background: url(img/footer.jpg);
+        background-size: 200%;
+        color:white;
+        font-weight: bold;
+    }
+.logo_footer
+    {
+        width:20%;
+        height: auto;
+        margin-left: 35%;
+        transition: transform .3s;
+}
+.logo_footer:hover 
+    {
+        transform: scale(1.2);
+    }
+.gr_infos
+    {
+        display: inline-block;
+        padding: 30px 30px;
+        width:96%;
+        height:100%;
+    }
+.gr_infos h3
+    {
+        margin-left:5px;
+        position: relative;
+    }
+.gr_infos ul li a 
+    {
+        text-decoration:none;
+        position:relative;
+        padding: 5px 5px;
+        text-align:justify;
+        color:rgba(245, 245, 245, 0.712);
+    }
+.gr_infos ul
+    {
+        list-style-type:none;
+        position:relative;
+    }
+.gr_infos ul li
+    {
+        margin-top: 20px;
+        position:relative;
+    }
+.info_1
+    {
+        float: left;
+        margin-left: 20px;
+        width:20%;
+        text-align:left;
+    }
+.info_2
+    {
+        float: left;
+        margin-left: 20px;
+        width:20%;
+        text-align:left;
+    }
+.info_3
+    {
+        float: left;
+        margin-left: 20px;
+        width:20%;
+        text-align:left;
+    }
+
+.info_4
+    {
+        float: left;
+        margin-left: 20px;
+        width:20%;
+        text-align:left;
+    }
+.link:hover
+    {
+        margin-left: -20px;
+        text-decoration: underline;
+    }
+.follow
+    {
+        position: relative;
+        display: inline-block;
+        margin-left: 10%;
+        width:70% ;
+    }
+.follow_title
+    {
+        text-align: center;
+    }
+.follow_slinks
+    {
+        text-align: center;
+        width: 50%;
+        margin-left: 35%;        
+        cursor:pointer;        
+        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%);
+        /* Start the shake animation and make the animation last for 0.5 seconds */
+        animation: shake 2s;
+      
+        /* When the animation is finished, start again */
+        animation-iteration-count: infinite;
+      }
+              
+        @keyframes shake 
+        {
+          0% { transform: translate(1px, 1px) rotate(0deg); }
+          10% { transform: translate(-1px, -2px) rotate(-1deg); }
+          20% { transform: translate(-3px, 0px) rotate(1deg); }
+          30% { transform: translate(3px, 2px) rotate(0deg); }
+          40% { transform: translate(1px, -1px) rotate(1deg); }
+          50% { transform: translate(-1px, 2px) rotate(-1deg); }
+          60% { transform: translate(-3px, 1px) rotate(0deg); }
+          70% { transform: translate(3px, 1px) rotate(-1deg); }
+          80% { transform: translate(-1px, -1px) rotate(1deg); }
+          90% { transform: translate(1px, 2px) rotate(0deg); }
+          100% { transform: translate(1px, -2px) rotate(-1deg); }
+        }
+.follow_slinks:hover
+    {                
+        -webkit-filter: none; /* Safari 6.0 - 9.0 */
+        filter: none;
+        animation: none;
+    }
+.follow_links
+    {
+        margin-left: 5px;
+        width:13%;
+        cursor:pointer;
+        float: left;
+        position: relative;
+    }
+.follow_olinks
+    {
+        display: block;
+        float: left;
+        position: relative;
+    }
+.follow_olinks a
+    {
+        margin-left: 10px;
+    }
+.follow_olinks:hover
+    {
+        text-decoration: none;
+    }
