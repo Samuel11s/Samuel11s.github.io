@@ -1,3 +1,2 @@
-(https://Samuel11s.github.io/Samuel/index.html)
-Samuel11s.github.io
-Sambit.com
+# **Welcome to Samuel11s ! 🙋‍♂️**
+Thank you for visiting this Github's link.
